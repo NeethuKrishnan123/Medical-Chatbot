@@ -14,7 +14,10 @@ An AI-powered Medical Chatbot that answers medical questions using Retrieval-Aug
 *  Interactive chatbot interface
 *  Fast responses with Groq LLM
 *  Flask-based web application
-*  Ready for cloud deployment
+*  Conversation History Support
+*  Docker Containerization
+*  GitHub Actions CI/CD
+*  AWS ECR & EC2 deployment
 
 ---
 
@@ -55,6 +58,8 @@ An AI-powered Medical Chatbot that answers medical questions using Retrieval-Aug
 
 * AWS
 * GitHub
+* Docker
+
 
 ---
 
@@ -201,10 +206,50 @@ Groq LLM
 Medical AI Chatbot
 ```
 
+---
+
+#  Docker
+
+Build Image
+
+```bash
+docker build -t medical-chatbot .
+```
+
+Run Container
+
+```bash
+docker run -p 8080:8080 medical-chatbot
+```
 
 ---
 
+# ☁️ CI/CD Pipeline
 
+The project uses GitHub Actions for Continuous Integration and Continuous Deployment.
+
+Pipeline Flow
+
+```
+GitHub Push
+      │
+      ▼
+GitHub Actions
+      │
+      ▼
+Docker Build
+      │
+      ▼
+Amazon ECR
+      │
+      ▼
+Amazon EC2
+      │
+      ▼
+Medical Chatbot
+```
+
+---
 
 
 
